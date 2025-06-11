@@ -21,79 +21,140 @@
     z-index: -1;
 }
 
+/* Estilos generales del body para centrar el contenido */
 body {
     font-family: 'Roboto', sans-serif;
     color: #fff;
     margin: 0;
-    padding: 0;
+    padding: 20px;
+    /* Añadido un poco de padding general para evitar que el contenido toque los bordes */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    box-sizing: border-box;
+    /* Asegura que el padding no afecte el ancho total del body */
 }
 
-/* Contenedor del contenido */
+/* Contenedor del contenido principal */
 .container {
     background: rgba(30, 30, 30, 0.9);
-    padding: 40px;
+    padding: 30px;
+    /* Reducido un poco el padding en general para espacios pequeños */
     border-radius: 12px;
     box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
     text-align: center;
-    width: 90%;
+    width: 95%;
+    /* El contenedor ocupa un porcentaje del ancho para ser adaptable */
     max-width: 400px;
+    /* Establece un ancho máximo para pantallas grandes */
     z-index: 1;
+    box-sizing: border-box;
+    /* Asegura que el padding y el border se incluyan dentro del width */
 }
 
+/* Logo */
 .logo {
-    width: 150px;
+    width: 120px;
+    /* Tamaño del logo ligeramente reducido para mejor visualización en móviles */
     margin-bottom: 20px;
     filter: drop-shadow(0 0 5px #e53935);
 }
 
+/* Título principal */
 h2 {
     margin-bottom: 20px;
     color: #e53935;
+    font-size: 2em;
+    /* Tamaño de fuente relativo al tamaño base del body */
 }
 
+/* Texto descriptivo */
 p {
     margin-bottom: 15px;
-    font-size: 18px;
+    font-size: 1.1em;
+    /* Tamaño de fuente relativo */
 }
 
+/* Campo de entrada de texto */
 input {
     padding: 12px;
     width: 100%;
+    /* Ocupa todo el ancho disponible del contenedor */
     margin-bottom: 20px;
-    font-size: 16px;
+    font-size: 1em;
+    /* Tamaño de fuente relativo */
     border: 2px solid #e53935;
     border-radius: 8px;
     background-color: #2c2c2c;
     color: #fff;
+    box-sizing: border-box;
+    /* Asegura que el padding y el borde no aumenten el ancho total */
 }
 
 input::placeholder {
     color: #bbb;
 }
 
+/* Botón de consulta */
 button {
     padding: 12px 20px;
     width: 100%;
-    font-size: 18px;
+    /* Ocupa todo el ancho disponible del contenedor */
+    font-size: 1.1em;
+    /* Tamaño de fuente relativo */
     background-color: #e53935;
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    box-sizing: border-box;
+    /* Asegura que el padding no aumente el ancho total */
 }
 
 button:hover {
     background-color: #d32f2f;
 }
 
+/* Resultado de la consulta */
 .resultado {
     margin-top: 30px;
-    font-size: 20px;
+    font-size: 1.2em;
+    /* Tamaño de fuente relativo */
     font-weight: bold;
     color: #4caf50;
+}
+
+/* Media Query para pantallas más pequeñas (ajustes finos para la experiencia móvil) */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        /* Reduce el padding del contenedor en pantallas muy pequeñas */
+    }
+
+    .logo {
+        width: 100px;
+        /* Reduce un poco más el tamaño del logo si es necesario */
+    }
+
+    h2 {
+        font-size: 1.8em;
+        /* Ajuste para títulos en pantallas muy pequeñas */
+    }
+
+    p {
+        font-size: 1em;
+        /* Ajuste para párrafos en pantallas muy pequeñas */
+    }
+
+    button {
+        font-size: 1em;
+        /* Ajuste para el botón en pantallas muy pequeñas */
+    }
+
+    .resultado {
+        font-size: 1.1em;
+        /* Ajuste para el resultado en pantallas muy pequeñas */
+    }
 }
